@@ -41,19 +41,16 @@ button {
   font-weight: 400;
   font-size: 24px;
   line-height: 25px;
-  margin-left: -40px;
-  margin-top: 10px;
 }
 #currentImage {
-  width: 120px;
-  margin-left: -60px;
+  width: 100px;
 }
 .container {
   background: rgba(255, 255, 255, 0.5);
   margin: 50px auto;
   padding: 30px 40px;
   display: block;
-  border: 2px #222831;
+  border: 1px solid rgba(0, 0, 0, 0.4);
   border-radius: 15px;
-  max-width: 700px;
+  max-width: 650px;
 }
