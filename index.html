@@ -21,16 +21,18 @@
   </head>
   <body>
     <video id="background-video" autoplay loop muted>
-      <source src="images/Coastline.mp4" type="video/mp4" />
+      <source src="images/01d.mp4" type="video/mp4" />
     </video>
     <div class="container">
       <div class="mb-2" id="current-day">Weather in</div>
       <div class="row mb-4">
         <div class="col-6">
           <h1>Marbella, Spain</h1>
+          <div>Humidity: <span id="humidity">48</span>%</div>
+          <div>Wind: <span id="wind">3</span> km/h</div>
         </div>
         <div class="col-2">
-          <img src="images/sun.png" alt="Sunny" id="currentImage" />
+          <img src="images/01d.png" alt="Sunny" id="icon" />
         </div>
         <div class="col-4" id="current">
           <div id="current-desc">Clear</div>
@@ -39,15 +41,9 @@
           <span><a href="#" id="fahrenheit">ºF</a></span>
         </div>
       </div>
-      <div class="row mb-4">
-        <div class="col-6">
-          <div>Humidity: <span id="humidity">48</span>%</div>
-          <div>Wind: <span id="wind">3</span> km/h</div>
-        </div>
-      </div>
       <form id="search-form">
         <div class="row">
-          <div class="col-9">
+          <div class="col-8">
             <input
               type="search"
               placeholder="Type city name..."
@@ -57,7 +53,7 @@
               autofocus
             />
           </div>
-          <div class="col-3">
+          <div class="col-4">
             <input type="submit" value="Search" class="btn btn-primary w-100" />
           </div>
         </div>

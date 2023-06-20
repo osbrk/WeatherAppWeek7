@@ -14,6 +14,16 @@ function showTemperature(response) {
   let currentWind = Math.round(response.data.wind.speed);
   let windElement = document.querySelector("#wind");
   windElement.innerHTML = currentWind;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `images/${response.data.weather[0].icon}.png`
+  );
+  let backgroundElement = document.querySelector("#background-video");
+  backgroundElement.setAttribute(
+    "src",
+    `images/${response.data.weather[0].icon}.mp4`
+  );
 }
 function searchCity(event) {
   event.preventDefault();
