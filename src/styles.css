@@ -58,3 +58,6 @@ button {
   border-radius: 15px;
   max-width: 650px;
 }
+p {
+  text-align: center;
+}
