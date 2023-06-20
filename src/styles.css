@@ -39,8 +39,12 @@ button {
 }
 #current {
   font-weight: 400;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 25px;
+  margin-top: 5px;
+}
+#current::first-letter {
+  text-transform: capitalize;
 }
 #currentImage {
   width: 100px;

@@ -6,7 +6,17 @@ function showTemperature(response) {
   let currentTemperature = `${Math.round(response.data.main.temp)}`;
   let currentDegrees = document.querySelector("#current-degrees");
   currentDegrees.innerHTML = `${currentTemperature}`;
-  }
+  console.log(response);
+  let currentDesc = response.data.weather[0].description;
+  let currentElement = document.querySelector("#current-desc");
+  currentElement.innerHTML = currentDesc;
+  let currentHumidity = response.data.main.humidity;
+  let humidityElement = document.querySelector("#humidity");
+  humidityElement.innerHTML = currentHumidity;
+  let currentWind = Math.round(response.data.wind.speed);
+  let windElement = document.querySelector("#wind");
+  windElement.innerHTML = currentWind;
+}
 function searchCity(event) {
   event.preventDefault();
   let input = document.querySelector("#change-city");
