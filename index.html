@@ -26,22 +26,23 @@
     <div class="container">
       <div class="mb-2" id="current-day">Weather in</div>
       <div class="row mb-4">
-        <h1>Marbella, Spain</h1>
-      </div>
-      <div class="row mb-4">
         <div class="col-6">
-          <div>Humidity: <span id="humidity">48</span>%</div>
-          <div>Wind: <span id="wind">3</span> km/h</div>
+          <h1>Marbella, Spain</h1>
         </div>
-
         <div class="col-2">
           <img src="images/sun.png" alt="Sunny" id="currentImage" />
         </div>
         <div class="col-4" id="current">
           <div id="current-desc">Clear</div>
           <span id="current-degrees">22</span>
-          <span id="celcius">ºC</span> |
-          <span id="farenheit">ºF</span>
+          <span><a href="#" id="celcius" class="active">ºC</a></span> |
+          <span><a href="#" id="fahrenheit">ºF</a></span>
+        </div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-6">
+          <div>Humidity: <span id="humidity">48</span>%</div>
+          <div>Wind: <span id="wind">3</span> km/h</div>
         </div>
       </div>
       <form id="search-form">
@@ -53,6 +54,7 @@
               class="form-control"
               id="change-city"
               autocomplete="off"
+              autofocus
             />
           </div>
           <div class="col-3">
