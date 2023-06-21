@@ -1,5 +1,6 @@
 h1 {
   font-family: "Cabin", sans-serif;
+  text-transform: capitalize;
 }
 body {
   font-family: "Public Sans", sans-serif;
