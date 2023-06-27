@@ -1,10 +1,36 @@
-let apiKey = "97f8e93f00107773f88eafd933ce86b7";
+let apiKey = "597c40c39084687093b091cd48b366f8";
 let apiUrl = "https://api.openweathermap.org/data/2.5/weather?";
 
+function showTemperature(response) {
+  event.preventDefault();
+  let currentTemperature = `${Math.round(response.data.main.temp)}`;
+  let currentElement = document.querySelector("#current-desc");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
+  let iconElement = document.querySelector("#icon");
+  let backgroundElement = document.querySelector("#background-video");
+  let currentDesc = response.data.weather[0].description;
+  let currentHumidity = response.data.main.humidity;
+  let currentWind = Math.round(response.data.wind.speed);
+  currentDegrees.innerHTML = `${currentTemperature}`;
+  currentElement.innerHTML = currentDesc;
+  humidityElement.innerHTML = currentHumidity;
+  windElement.innerHTML = currentWind;
+  iconElement.setAttribute(
+    "src",
+    `images/${response.data.weather[0].icon}.png`
+  );
+  backgroundElement.setAttribute(
+    "src",
+    `images/${response.data.weather[0].icon}.mp4`
+  );
+  getForecast(response.data.coord);
+}
+
 function defaultCity() {
-  let currentPlace = "Marbella";
+  let defaultPlace = "Marbella";
   axios
-    .get(`${apiUrl}q=${currentPlace}&units=metric&appid=${apiKey}`)
+    .get(`${apiUrl}q=${defaultPlace}&units=metric&appid=${apiKey}`)
     .then(showTemperature);
 }
 function formatDay(timestamp) {
@@ -48,46 +74,18 @@ function displayForecast(response) {
 }
 
 function getForecast(coordinates) {
+  let apiKey = "97f8e93f00107773f88eafd933ce86b7";
   apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiURL).then(displayForecast);
-  console.log(apiURL);
-}
-
-function showTemperature(response) {
-  event.preventDefault();
-  let currentTemperature = `${Math.round(response.data.main.temp)}`;
-  let currentElement = document.querySelector("#current-desc");
-  let humidityElement = document.querySelector("#humidity");
-  let windElement = document.querySelector("#wind");
-  let iconElement = document.querySelector("#icon");
-  let backgroundElement = document.querySelector("#background-video");
-  let currentDesc = response.data.weather[0].description;
-  let currentHumidity = response.data.main.humidity;
-  let currentWind = Math.round(response.data.wind.speed);
-  currentDegrees.innerHTML = `${currentTemperature}`;
-  currentElement.innerHTML = currentDesc;
-  humidityElement.innerHTML = currentHumidity;
-  windElement.innerHTML = currentWind;
-  iconElement.setAttribute(
-    "src",
-    `images/${response.data.weather[0].icon}.png`
-  );
-  backgroundElement.setAttribute(
-    "src",
-    `images/${response.data.weather[0].icon}.mp4`
-  );
-  getForecast(response.data.coord);
 }
 
 function searchCity(event) {
   event.preventDefault();
   let input = document.querySelector("#change-city");
-  currentPlace = `${input.value}`;
+  let currentPlace = `${input.value}`;
   let h1 = document.querySelector("h1");
   h1.innerHTML = currentPlace;
   form.reset();
-  celcius.setAttribute("class", "active");
-  fahrenheit.setAttribute("class", "inactive");
   axios
     .get(`${apiUrl}q=${currentPlace}&units=metric&appid=${apiKey}`)
     .then(showTemperature);
