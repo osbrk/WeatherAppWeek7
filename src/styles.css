@@ -27,13 +27,6 @@ button {
   bottom: 0;
   z-index: -1;
 }
-.active {
-  color: #222831;
-  text-decoration: none;
-}
-.active:hover {
-  cursor: default;
-}
 #footer {
   display: block;
   margin: 0 auto;
