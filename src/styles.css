@@ -10,7 +10,7 @@ body {
 a.opensource {
   color: #d3e0df;
 }
-img {
+#icon {
   width: 75px;
 }
 button {
@@ -48,7 +48,7 @@ button {
   text-transform: capitalize;
 }
 #currentImage {
-  width: 100px;
+  width: 75px;
 }
 .container {
   background: rgba(255, 255, 255, 0.5);
@@ -61,4 +61,22 @@ button {
 }
 p {
   text-align: center;
+}
+
+.weather-forecast {
+  margin-top: 40px;
+  text-align: center;
+}
+.weather-forecast-date {
+  font-weight: 400;
+}
+.weather-forecast-image {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.weather-forecast-temp-max {
+  font-weight: 300;
+}
+.weather-forecast-temp-min {
+  opacity: 0.5;
 }
