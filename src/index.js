@@ -25,6 +25,29 @@ function showTemperature(response) {
     `images/${response.data.weather[0].icon}.mp4`
   );
 }
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thu", "Fri", "Sat", "Sun"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+          <div class="col-2">
+            <div class="weather-forecast-date">${day}</div>
+            <img
+              src="images/01d.png"
+              class="weather-forecast-image"
+              alt=""
+              width="50px"
+            /><br />
+            <span class="weather-forecast-temp-max">26º</span>&nbsp;
+            <span class="weather-forecast-temp-min">16º</span>
+          </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 function searchCity(event) {
   event.preventDefault();
   let input = document.querySelector("#change-city");
@@ -82,3 +105,4 @@ let fahrenheit = document.querySelector("#fahrenheit");
 fahrenheit.addEventListener("click", changeToF);
 let celcius = document.querySelector("#celcius");
 celcius.addEventListener("click", changeToC);
+displayForecast();
